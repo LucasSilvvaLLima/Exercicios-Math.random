@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_jogo">
+        Placar: <br>
+        1° Jogador: 0 <br>
+        2° Jogador: 0 <br>
+        Empate: 0 <br>
+    </div>
+    <button onclick="jogar()">Jogar</button>
+    <div id="container" style="display: flex;">
+        <div id="div_jogador1">
+            <img src="" alt="" id="id_dado1" style="height: 150px;">
+            
+        </div> 
+        <div id="div_jogador2">
+            <img src="" alt="" id="id_dado2" style="height: 150px;">
+        </div>
+    </div>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    var jogador1 = 0
+    var jogador2 = 0
+    var empate = 0
+    function jogar(){
+        var dado1 = parseInt(1 + Math.random() * 6)
+        var dado2 = parseInt(1 + Math.random() * 6)
+        var empatou = dado1 == dado2
+        var jogador1Venceu = dado1 > dado2
+
+        
+        if (empatou) {
+            empate++
+        } else if(jogador1Venceu){
+            jogador1++
+        }else{
+            jogador2++
+        }
+
+        var mensagem = ""
+        var jogoEmpatado = jogador1 == jogador2
+        var jogador1Ganhando = jogador1 > jogador2
+
+        if (jogoEmpatado) {
+            mensagem = "Jogo empatado"
+        } else if(jogador1Ganhando){
+            mensagem = "O 1° jogador está vencendo"
+        }else{
+            mensagem = "O 2° jogador está vencendo"
+        }
+
+        div_jogo.innerHTML = 
+        `
+        Placar: <br>
+        1° Jogador: ${jogador1} <br>
+        2° Jogador: ${jogador2} <br>
+        Empate: ${empate} <br>
+        `
+
+        div_resultado.innerHTML = `${mensagem}`
+        if (dado1 == 1) {
+            id_dado1.src = `https://i0.wp.com/lavrynenko.com/wp-content/uploads/2020/04/1.png?ssl=1`
+        } else if (dado1 == 2) {
+            id_dado1.src = `https://i0.wp.com/lavrynenko.com/wp-content/uploads/2020/04/2.png?ssl=1`
+        } else if (dado1 == 3) {
+            id_dado1.src = `https://i0.wp.com/lavrynenko.com/wp-content/uploads/2020/04/3.png?ssl=1`
+        } else if (dado1 == 4) {
+            id_dado1.src = `https://i0.wp.com/lavrynenko.com/wp-content/uploads/2020/04/4.png?ssl=1`
+        } else if (dado1 == 5) {
+            id_dado1.src = `https://i0.wp.com/lavrynenko.com/wp-content/uploads/2020/04/5.png?ssl=1`
+        } else {
+            id_dado1.src = `https://i0.wp.com/lavrynenko.com/wp-content/uploads/2020/04/6.png?ssl=1`
+        }
+
+        if (dado2 == 1) {
+            id_dado2.src = `https://i0.wp.com/lavrynenko.com/wp-content/uploads/2020/04/1.png?ssl=1`
+        } else if (dado2 == 2) {
+            id_dado2.src = `https://i0.wp.com/lavrynenko.com/wp-content/uploads/2020/04/2.png?ssl=1`
+        } else if (dado2 == 3) {
+            id_dado2.src = `https://i0.wp.com/lavrynenko.com/wp-content/uploads/2020/04/3.png?ssl=1`
+        } else if (dado2 == 4) {
+            id_dado2.src = `https://i0.wp.com/lavrynenko.com/wp-content/uploads/2020/04/4.png?ssl=1`
+        } else if (dado2 == 5) {
+            id_dado2.src = `https://i0.wp.com/lavrynenko.com/wp-content/uploads/2020/04/5.png?ssl=1`
+        } else {
+            id_dado2.src = `https://i0.wp.com/lavrynenko.com/wp-content/uploads/2020/04/6.png?ssl=1`
+        }
+    }
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Digite seu nome: <input type="text" id="in_nome"></p>
+    <p>Digite seus 3 numeros da sorte: <input type="text" id="in_num1" placeholder="Entre 1 e 10" size="7"> <input type="text" id="in_num2" placeholder="Entre 1 e 10" size="7"> <input type="text" id="in_num3" placeholder="Entre 1 e 10" size="7"></p>
+    <button onclick="sortear()">Sortear</button>
+    <div id="div_sorteio"></div>
+    
+</body>
+</html>
+<script>
+    function sortear(){
+        div_sorteio.innerHTML = ""
+        var nome = in_nome.value
+        var numero1 = Number(in_num1.value)
+        var numero2 = Number(in_num2.value)
+        var numero3 = Number(in_num3.value)
+        var numerosValido = numero1 >= 1 && numero1 <= 10 && numero2 >= 1 && numero2 <= 10 && numero3 >= 1 && numero3 <= 10
+
+        if (!numerosValido) {
+            alert("Número inválido Digite um número entre 1 e 10")
+        } else {
+            var sorteado = parseInt(1 + Math.random() * 10)
+            var ganhou = (numero1 == sorteado) || (numero2 == sorteado) || (numero3 == sorteado)
+            for(var i = 1; !ganhou; i++){
+                div_sorteio.innerHTML += `${sorteado} `
+                sorteado = parseInt(1 + Math.random() * 10)
+                ganhou = (numero1 == sorteado) || (numero2 == sorteado) || (numero3 == sorteado)
+            }
+            div_sorteio.innerHTML += `${sorteado}<br>Parabéns, ${nome} você foi sorteado(a) após ${i} sorteios!`
+        }
+    }
+</script>

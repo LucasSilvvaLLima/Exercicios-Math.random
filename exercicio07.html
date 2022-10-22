@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="s2Cabalistico()">Quero um cabalístico</button><br>
+    <div id="div_cabalistico"></div>
+</body>
+</html>
+<script>
+    function s2Cabalistico(){
+       
+        var sorteado = parseInt(1 + Math.random() * 15)
+        var cabalistico = sorteado == 3 || sorteado == 4 || sorteado == 7 || sorteado == 10 || sorteado == 12
+
+        if (cabalistico) {
+            div_cabalistico.innerHTML = `Número sorteado: ${sorteado}<br>Eu S2 números cabalísticos!`
+        } else {
+            div_cabalistico.innerHTML = `Número sorteado: ${sorteado}<br>Ah, me dá um número bom na próxima!`
+        }
+    }
+</script>

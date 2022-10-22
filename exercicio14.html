@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="avaliar()">Avaliar</button><button onclick="equipe()">Equipe</button>
+    <div id="div_num_aleatorio"></div>
+    <img src="" alt="" id="id_img" style="height: 200px;">
+    <div id="div_media"></div>
+    <img src="" alt="" id="id_img_media" style="height: 200px;">
+
+</body>
+</html>
+<script>
+    var numAvaliacoes = 0
+    var somaAvaliacoes = 0
+    function avaliar(){
+        div_media.innerHTML = ""
+        id_img_media.src = ""
+        var num_aleatorio = (Math.random() * 6)
+        if (num_aleatorio > 5) {
+            num_aleatorio = parseInt(num_aleatorio)
+        }
+        div_num_aleatorio.innerHTML = `Nota recebida: ${(num_aleatorio).toFixed(1)}`
+        var muitoTriste = num_aleatorio <= 0.5
+        var meioTriste = num_aleatorio <= 1.5
+        var neutro = num_aleatorio <= 3.5
+        var feliz = num_aleatorio <= 4.5
+        if (muitoTriste) {
+            id_img.src = `https://img.icons8.com/emoji/452/loudly-crying-face.png`
+            numAvaliacoes++
+        } else if(meioTriste){
+            id_img.src = `https://image.shutterstock.com/image-vector/face-sad-emoji-cute-emoticon-600w-1271034283.jpg`
+            numAvaliacoes++
+        } else if(neutro){
+            id_img.src = `https://image.shutterstock.com/image-vector/neutral-emoji-emoticon-straight-mouth-600w-2000948720.jpg`
+            numAvaliacoes++
+        } else if(feliz){
+            id_img.src = `https://image.shutterstock.com/image-vector/winking-face-eye-wink-emoji-600w-1992098594.jpg`
+            numAvaliacoes++
+        }else{
+            id_img.src = `https://image.shutterstock.com/image-illustration/thumbs-emoji-isolated-on-white-600w-725959831.jpg`
+            numAvaliacoes++
+        }
+        somaAvaliacoes += num_aleatorio
+    }
+    function equipe(){
+        div_num_aleatorio.innerHTML = ""
+        id_img.src = ""
+
+        var media = somaAvaliacoes / numAvaliacoes
+
+        div_media.innerHTML = `Média geral: ${(media).toFixed(1)}`
+        var muitoTriste = media <= 0.5
+        var meioTriste = media <= 1.5
+        var neutro = media <= 3.5
+        var feliz = media <= 4.5
+        if (muitoTriste) {
+            id_img_media.src = `https://img.icons8.com/emoji/452/loudly-crying-face.png`
+        } else if(meioTriste){
+            id_img_media.src = `https://image.shutterstock.com/image-vector/face-sad-emoji-cute-emoticon-600w-1271034283.jpg`
+        } else if(neutro){
+            id_img_media.src = `https://image.shutterstock.com/image-vector/neutral-emoji-emoticon-straight-mouth-600w-2000948720.jpg`
+        } else if(feliz){
+            id_img_media.src = `https://image.shutterstock.com/image-vector/winking-face-eye-wink-emoji-600w-1992098594.jpg`
+        }else{
+            id_img_media.src = `https://image.shutterstock.com/image-illustration/thumbs-emoji-isolated-on-white-600w-725959831.jpg`
+        }
+
+    }
+</script>

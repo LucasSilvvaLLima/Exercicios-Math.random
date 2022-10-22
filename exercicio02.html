@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sortearTime()">Sortear time</button><br><br>
+    <img src="" alt="" id="id_time" style="height: 150px;">
+</body>
+</html>
+<script>
+    function sortearTime(){
+        
+            var times = parseInt(1 + Math.random() * 4)
+
+            if (times == 1) {
+                id_time.src = `https://seeklogo.com/images/C/Corinthians_Bras_and__227_o-logo-E92E44B595-seeklogo.com.png`
+            }else if(times == 2){
+                id_time.src = `https://seeklogo.com/images/S/Santos_Futebol_Clube-logo-B40F62AC4C-seeklogo.com.png`
+            }else if(times == 3){
+                id_time.src = `https://seeklogo.com/images/S/sao-paulo-futebol-clube-logo-02EE9B1905-seeklogo.com.png`
+            }else{
+                id_time.src = `https://seeklogo.com/images/P/palmeiras-futebol-clube-logo-FB63B9D818-seeklogo.com.png`
+            }
+    }
+</script>

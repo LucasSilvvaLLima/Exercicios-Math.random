@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="jokenpo()">Jogar</button><br><br>
+    <img src="" alt="" id="id_img" style="height: 200px;">
+</body>
+</html>
+<script>
+    function jokenpo(){
+        var jogada = parseInt(1 + Math.random() * 3)
+        pedra = 1; papel = 2;
+
+        if (jogada == pedra) {
+            id_img.src = `https://jeffersonjr.github.io/projetos/jokenpo/img/pedra.png`
+        } else if(jogada == papel){
+            id_img.src = `https://jeffersonjr.github.io/projetos/jokenpo/img/papel.png`
+        }else{
+            id_img.src = `https://jeffersonjr.github.io/projetos/jokenpo/img/tesoura.png`
+        }
+    }
+</script>

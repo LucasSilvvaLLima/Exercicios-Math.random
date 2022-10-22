@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_mensagem">Números pares: 0 <br>Números ímpares: 0</div>
+    <button onclick="sortear()">Sortear</button>
+    <div id="num_sorteado"></div>
+</body>
+</html>
+<script>
+    var par = 0
+    var impar = 0 
+    function sortear(){
+        var mensagem = "Números pares: par <br>Números ímpares: impar"
+        var sorteado = parseInt(-31 + Math.random() * 22)
+        num_sorteado.innerHTML = `número sorteado: ${sorteado}`
+        if (sorteado % 2 == 0) {
+            par++
+        } else {
+            impar++
+        }
+        div_mensagem.innerHTML = `Números pares: ${par}<br>Números ímpares: ${impar}`
+    }
+</script>

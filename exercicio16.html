@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="verLua()">Ver a Lua</button>
+    <div id="div_dia"></div>
+    <img src="" alt="" id="id_img">
+</body>
+</html>
+<script>
+    function verLua(){
+        var dia = parseInt(1 + Math.random() * 31)
+        div_dia.innerHTML = `Dia: ${dia}`
+
+        var nova = dia <= 7
+        var cheia = dia <= 16
+        var minguante = dia <= 22
+
+        if (nova) {
+            id_img.src = `https://cdn.shopify.com/s/files/1/1061/1924/files/Dark_moon_emoji_icon_png_200x200.png`
+        } else if(cheia){
+            id_img.src = `https://cdn.shopify.com/s/files/1/1061/1924/files/Full_moon_emoji_icon_png_200x200.png`
+        }else if(minguante){
+            id_img.src = `https://user-images.githubusercontent.com/111443602/197290366-2fbd1343-852a-4bdc-a8ab-c004562c4fcf.png`
+        }else{
+            id_img.src = `https://cdn.shopify.com/s/files/1/1061/1924/files/Waning_crescent_moon_emoji_icon_png_200x200.png`
+        }
+    }
+</script>
